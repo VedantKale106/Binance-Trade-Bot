@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binance Spot Testnet Bot</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 50%, #0d0d0d 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .trading-panel {
+            background: linear-gradient(145deg, #1a1a1a, #262626);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 
+                        0 0 0 1px rgba(255, 204, 0, 0.1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trading-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #f7c600, #ffcc00, #ffd700);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .info-panel {
+            background: linear-gradient(145deg, #1a1a1a, #262626);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 
+                        0 0 0 1px rgba(255, 204, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffd700;
+            margin-bottom: 10px;
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffd700, #ffcc00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 25px;
+            padding: 10px;
+            background: rgba(40, 167, 69, 0.1);
+            border: 1px solid rgba(40, 167, 69, 0.3);
+            border-radius: 10px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #28a745;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #f0f0f0;
+            font-size: 14px;
+        }
+
+        .tooltip {
+            font-size: 12px;
+            color: #888;
+            font-weight: 400;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: 1px solid #333;
+            background: rgba(51, 51, 51, 0.8);
+            color: #fff;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #ffcc00;
+            box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.1);
+            background: rgba(51, 51, 51, 1);
+        }
+
+        .order-button {
+            background: linear-gradient(135deg, #ffcc00, #ffd700);
+            color: #000;
+            border: none;
+            padding: 16px;
+            margin-top: 25px;
+            width: 100%;
+            font-weight: 700;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .order-button:hover {
+            background: linear-gradient(135deg, #e6b800, #ffcc00);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 204, 0, 0.3);
+        }
+
+        .order-button:active {
+            transform: translateY(0);
+        }
+
+        .result-card {
+            background: linear-gradient(135deg, #1e3a1e, #2d5a2d);
+            border-left: 4px solid #28a745;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 12px;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .result-card h3 {
+            margin-bottom: 15px;
+            color: #4ade80;
+            font-size: 18px;
+        }
+
+        .result-card p {
+            margin: 8px 0;
+            font-size: 14px;
+            color: #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .info-section {
+            margin-bottom: 30px;
+        }
+
+        .info-section h3 {
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .info-section p {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 8px 0;
+            color: #ccc;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            color: #28a745;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .stat-card {
+            background: rgba(255, 204, 0, 0.1);
+            border: 1px solid rgba(255, 204, 0, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffd700;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #888;
+            margin-top: 5px;
+        }
+
+        .warning-box {
+            background: rgba(255, 193, 7, 0.1);
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .warning-box h4 {
+            color: #ffc107;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .warning-box p {
+            color: #e0e0e0;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .main-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 0 10px;
+            }
+
+            .trading-panel,
+            .info-panel {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            body {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .trading-panel,
+            .info-panel {
+                padding: 15px;
+                border-radius: 15px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            .order-button {
+                padding: 14px;
+                font-size: 14px;
+            }
+
+            input[type="text"],
+            input[type="number"],
+            select {
+                padding: 10px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Trading Panel -->
+        <div class="trading-panel">
+            <h1>📈 Binance Spot Bot</h1>
+            <p class="subtitle">Testnet Trading Interface</p>
+            
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <span>Connected to Testnet</span>
+            </div>
+
+            <form method="post">
+                <div class="form-group">
+                    <label>Trading Pair <span class="tooltip">(e.g., BTCUSDT, ETHUSDT)</span></label>
+                    <input type="text" name="symbol" placeholder="Enter trading pair..." required>
+                </div>
+
+                <div class="form-group">
+                    <label>Order Side</label>
+                    <select name="side">
+                        <option value="BUY">🔼 BUY (Long Position)</option>
+                        <option value="SELL">🔽 SELL (Short Position)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Order Type</label>
+                    <select name="order_type" onchange="togglePrice(this.value)">
+                        <option value="MARKET">📊 Market Order (Instant)</option>
+                        <option value="LIMIT">📉 Limit Order (Set Price)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Quantity <span class="tooltip">(Amount to trade)</span></label>
+                    <input type="number" name="quantity" step="0.001" placeholder="0.001" required>
+                </div>
+
+                <div id="priceDiv" class="form-group" style="display:none;">
+                    <label>Limit Price <span class="tooltip">(Price per unit)</span></label>
+                    <input type="number" name="price" step="0.01" placeholder="0.00">
+                </div>
+
+                <button type="submit" class="order-button">🚀 Execute Trade</button>
+            </form>
+
+            <!-- Result Display -->
+            {% if result %}
+            <div class="result-card">
+                <h3>✅ Trade Executed Successfully!</h3>
+                <p><strong>Symbol:</strong> <span>{{ result['order']['symbol'] }}</span></p>
+                <p><strong>Order ID:</strong> <span>{{ result['order']['orderId'] }}</span></p>
+                <p><strong>Side:</strong> <span>{{ result['order']['side'] }}</span></p>
+                <p><strong>Type:</strong> <span>{{ result['order']['type'] }}</span></p>
+                <p><strong>Status:</strong> <span>{{ result['order']['status'] }}</span></p>
+                <p><strong>Quantity:</strong> <span>{{ result['order']['executedQty'] }}</span></p>
+                <p><strong>Price:</strong> <span>{{ result['order']['fills'][0]['price'] }}</span></p>
+                <p><strong>Total:</strong> <span>{{ result['order']['cummulativeQuoteQty'] }} USDT</span></p>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Information Panel -->
+        <div class="info-panel">
+            <div class="info-section">
+                <h3>🎯 Trading Features</h3>
+                <ul class="feature-list">
+                    <li>Real-time market data integration</li>
+                    <li>Instant order execution</li>
+                    <li>Market & limit order support</li>
+                    <li>Risk management tools</li>
+                    <li>Portfolio tracking</li>
+                    <li>Advanced order types</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <h3>📊 Market Stats</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">24/7</div>
+                        <div class="stat-label">Market Access</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">0.1%</div>
+                        <div class="stat-label">Trading Fee</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">500+</div>
+                        <div class="stat-label">Trading Pairs</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">99.9%</div>
+                        <div class="stat-label">Uptime</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h3>🔧 How to Use</h3>
+                <p>1. <strong>Select Trading Pair:</strong> Choose from popular pairs like BTCUSDT, ETHUSDT, or ADAUSDT.</p>
+                <p>2. <strong>Choose Order Type:</strong> Market orders execute immediately, limit orders wait for your target price.</p>
+                <p>3. <strong>Set Quantity:</strong> Enter the amount you want to trade (minimum 0.001).</p>
+                <p>4. <strong>Execute:</strong> Click the trade button to place your order on the testnet.</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Testnet Environment</h4>
+                <p>This is a <strong>testnet environment</strong> using fake funds. No real money is involved. Perfect for learning and testing trading strategies without financial risk.</p>
+            </div>
+
+            <div class="info-section">
+                <h3>💡 Trading Tips</h3>
+                <p>• Start with small amounts to test your strategy</p>
+                <p>• Use limit orders for better price control</p>
+                <p>• Monitor market trends before placing orders</p>
+                <p>• Practice risk management techniques</p>
+                <p>• Keep track of your trading performance</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function togglePrice(type) {
+            const priceDiv = document.getElementById('priceDiv');
+            priceDiv.style.display = type === 'LIMIT' ? 'block' : 'none';
+            
+            // Add smooth animation
+            if (type === 'LIMIT') {
+                priceDiv.style.opacity = '0';
+                priceDiv.style.transform = 'translateY(-10px)';
+                setTimeout(() => {
+                    priceDiv.style.transition = 'all 0.3s ease';
+                    priceDiv.style.opacity = '1';
+                    priceDiv.style.transform = 'translateY(0)';
+                }, 10);
+            }
+        }
+
+        // Add some interactive feedback
+        document.querySelectorAll('input, select').forEach(element => {
+            element.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'scale(1.02)';
+                this.parentElement.style.transition = 'transform 0.2s ease';
+            });
+            
+            element.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'scale(1)';
+            });
+        });
+
+        // Simulate real-time updates (for demo purposes)
+        setInterval(() => {
+            const statusDot = document.querySelector('.status-dot');
+            statusDot.style.background = statusDot.style.background === 'rgb(40, 167, 69)' ? '#ffd700' : '#28a745';
+        }, 3000);
+    </script>
+</body>
+</html>

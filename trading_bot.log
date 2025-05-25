@@ -1,0 +1,83 @@
+2025-05-24 22:08:43,296 - ERROR - Connection Error: APIError(code=-2015): Invalid API-key, IP, or permissions for action
+2025-05-24 22:10:36,730 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-24 22:10:36,730 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-24 22:10:36,744 - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-24 22:10:38,180 - WARNING -  * Debugger is active!
+2025-05-24 22:10:38,182 - INFO -  * Debugger PIN: 613-907-366
+2025-05-24 22:10:47,680 - INFO - 127.0.0.1 - - [24/May/2025 22:10:47] "GET / HTTP/1.1" 200 -
+2025-05-24 22:10:47,743 - INFO - 127.0.0.1 - - [24/May/2025 22:10:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-24 22:10:58,828 - INFO - Order Placed: {'symbol': 'BTCUSDT', 'orderId': 6632257, 'orderListId': -1, 'clientOrderId': 'x-HNA2TXFJa6f0a4776b620d29bb66cb', 'transactTime': 1748104859033, 'price': '0.00000000', 'origQty': '0.00100000', 'executedQty': '0.00100000', 'origQuoteOrderQty': '0.00000000', 'cummulativeQuoteQty': '108.79001000', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'workingTime': 1748104859033, 'fills': [{'price': '108790.01000000', 'qty': '0.00100000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 3021118}], 'selfTradePreventionMode': 'EXPIRE_MAKER'}
+2025-05-24 22:10:58,829 - INFO - 127.0.0.1 - - [24/May/2025 22:10:58] "POST / HTTP/1.1" 200 -
+2025-05-24 22:13:42,767 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-24 22:13:42,767 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-24 22:13:42,777 - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-24 22:13:44,193 - WARNING -  * Debugger is active!
+2025-05-24 22:13:44,195 - INFO -  * Debugger PIN: 613-907-366
+2025-05-24 22:13:50,521 - INFO - Order Placed: {'symbol': 'BTCUSDT', 'orderId': 6633598, 'orderListId': -1, 'clientOrderId': 'x-HNA2TXFJ4bfea9a033085e0033905', 'transactTime': 1748105030726, 'price': '0.00000000', 'origQty': '0.00100000', 'executedQty': '0.00100000', 'origQuoteOrderQty': '0.00000000', 'cummulativeQuoteQty': '108.82097000', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'workingTime': 1748105030726, 'fills': [{'price': '108820.97000000', 'qty': '0.00100000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 3021473}], 'selfTradePreventionMode': 'EXPIRE_MAKER'}
+2025-05-24 22:13:50,547 - INFO - 127.0.0.1 - - [24/May/2025 22:13:50] "POST / HTTP/1.1" 200 -
+2025-05-24 22:14:01,055 - INFO - Order Placed: {'symbol': 'BTCUSDT', 'orderId': 6633761, 'orderListId': -1, 'clientOrderId': 'x-HNA2TXFJdb11377901b1fa6515f4', 'transactTime': 1748105041269, 'price': '0.00000000', 'origQty': '0.00500000', 'executedQty': '0.00500000', 'origQuoteOrderQty': '0.00000000', 'cummulativeQuoteQty': '544.07775000', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'workingTime': 1748105041269, 'fills': [{'price': '108815.55000000', 'qty': '0.00500000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 3021507}], 'selfTradePreventionMode': 'EXPIRE_MAKER'}
+2025-05-24 22:14:01,055 - INFO - 127.0.0.1 - - [24/May/2025 22:14:01] "POST / HTTP/1.1" 200 -
+2025-05-24 22:15:03,484 - INFO - Order Placed: {'symbol': 'BTCUSDT', 'orderId': 6634397, 'orderListId': -1, 'clientOrderId': 'x-HNA2TXFJ8f467bea27d8c9a4be5bd7', 'transactTime': 1748105103698, 'price': '0.00000000', 'origQty': '0.00500000', 'executedQty': '0.00500000', 'origQuoteOrderQty': '0.00000000', 'cummulativeQuoteQty': '544.05895000', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'workingTime': 1748105103698, 'fills': [{'price': '108811.79000000', 'qty': '0.00500000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 3021633}], 'selfTradePreventionMode': 'EXPIRE_MAKER'}
+2025-05-24 22:15:03,513 - INFO - 127.0.0.1 - - [24/May/2025 22:15:03] "POST / HTTP/1.1" 200 -
+2025-05-24 22:15:17,905 - ERROR - Order Error: APIError(code=-1100): Illegal characters found in parameter 'quantity'; legal range is '^([0-9]{1,20})(\.[0-9]{1,20})?$'.
+2025-05-24 22:15:17,913 - INFO - 127.0.0.1 - - [24/May/2025 22:15:17] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+2025-05-24 22:15:17,996 - INFO - 127.0.0.1 - - [24/May/2025 22:15:17] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-05-24 22:15:18,003 - INFO - 127.0.0.1 - - [24/May/2025 22:15:18] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-05-24 22:15:18,031 - INFO - 127.0.0.1 - - [24/May/2025 22:15:18] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=wd6V1CvoOuwayIC0DKMY HTTP/1.1" 200 -
+2025-05-24 22:15:18,046 - INFO - 127.0.0.1 - - [24/May/2025 22:15:18] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-05-24 22:15:25,289 - INFO - Order Placed: {'symbol': 'BTCUSDT', 'orderId': 6634629, 'orderListId': -1, 'clientOrderId': 'x-HNA2TXFJf2470b5a957e774162c754', 'transactTime': 1748105125503, 'price': '0.00000000', 'origQty': '0.01000000', 'executedQty': '0.01000000', 'origQuoteOrderQty': '0.00000000', 'cummulativeQuoteQty': '1088.30480000', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'workingTime': 1748105125503, 'fills': [{'price': '108830.48000000', 'qty': '0.01000000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 3021685}], 'selfTradePreventionMode': 'EXPIRE_MAKER'}
+2025-05-24 22:15:25,290 - INFO - 127.0.0.1 - - [24/May/2025 22:15:25] "POST / HTTP/1.1" 200 -
+2025-05-25 09:57:44,437 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-25 09:57:44,438 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-25 09:57:44,458 - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-25 09:57:46,019 - WARNING -  * Debugger is active!
+2025-05-25 09:57:46,021 - INFO -  * Debugger PIN: 613-907-366
+2025-05-25 09:58:37,158 - INFO - 127.0.0.1 - - [25/May/2025 09:58:37] "GET / HTTP/1.1" 200 -
+2025-05-25 09:58:37,304 - INFO - 127.0.0.1 - - [25/May/2025 09:58:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-25 09:59:40,948 - INFO - Order Placed: {'symbol': 'BTCUSDT', 'orderId': 6897630, 'orderListId': -1, 'clientOrderId': 'x-HNA2TXFJ631af73bd56c7a20fcc693', 'transactTime': 1748147381224, 'price': '0.00000000', 'origQty': '0.01000000', 'executedQty': '0.01000000', 'origQuoteOrderQty': '0.00000000', 'cummulativeQuoteQty': '1079.79960000', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'workingTime': 1748147381224, 'fills': [{'price': '107979.96000000', 'qty': '0.01000000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 3101056}], 'selfTradePreventionMode': 'EXPIRE_MAKER'}
+2025-05-25 09:59:40,948 - INFO - 127.0.0.1 - - [25/May/2025 09:59:40] "POST / HTTP/1.1" 200 -
+2025-05-25 10:04:59,210 - INFO -  * Detected change in 'C:\\Users\\Vedant\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\dotenv\\__init__.py', reloading
+2025-05-25 10:04:59,226 - INFO -  * Detected change in 'C:\\Users\\Vedant\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\dotenv\\main.py', reloading
+2025-05-25 10:05:00,298 - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-25 10:05:01,915 - WARNING -  * Debugger is active!
+2025-05-25 10:05:01,917 - INFO -  * Debugger PIN: 613-907-366
+2025-05-25 10:05:13,441 - INFO -  * Detected change in 'c:\\Users\\Vedant\\Desktop\\Binance Bot\\app.py', reloading
+2025-05-25 10:05:13,442 - INFO -  * Detected change in 'c:\\Users\\Vedant\\Desktop\\Binance Bot\\app.py', reloading
+2025-05-25 10:05:13,442 - INFO -  * Detected change in 'c:\\Users\\Vedant\\Desktop\\Binance Bot\\app.py', reloading
+2025-05-25 10:05:14,141 - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-25 10:05:15,934 - WARNING -  * Debugger is active!
+2025-05-25 10:05:15,936 - INFO -  * Debugger PIN: 613-907-366
+2025-05-25 10:05:30,315 - INFO - Order Placed: {'symbol': 'BTCUSDT', 'orderId': 6900116, 'orderListId': -1, 'clientOrderId': 'x-HNA2TXFJa3b9bcb75c7fe5338f760', 'transactTime': 1748147730590, 'price': '0.00000000', 'origQty': '0.01000000', 'executedQty': '0.01000000', 'origQuoteOrderQty': '0.00000000', 'cummulativeQuoteQty': '1080.84900000', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'workingTime': 1748147730590, 'fills': [{'price': '108084.90000000', 'qty': '0.01000000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 3101641}], 'selfTradePreventionMode': 'EXPIRE_MAKER'}
+2025-05-25 10:05:30,368 - INFO - 127.0.0.1 - - [25/May/2025 10:05:30] "POST / HTTP/1.1" 200 -
+2025-05-25 10:05:42,065 - INFO - Order Placed: {'symbol': 'BTCUSDT', 'orderId': 6900172, 'orderListId': -1, 'clientOrderId': 'x-HNA2TXFJa1542fee1c0372c1ddcff5', 'transactTime': 1748147742341, 'price': '0.00000000', 'origQty': '0.00200000', 'executedQty': '0.00200000', 'origQuoteOrderQty': '0.00000000', 'cummulativeQuoteQty': '216.16981990', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'workingTime': 1748147742341, 'fills': [{'price': '108084.90000000', 'qty': '0.00001000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 3101663}, {'price': '108084.91000000', 'qty': '0.00199000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 3101664}], 'selfTradePreventionMode': 'EXPIRE_MAKER'}
+2025-05-25 10:05:42,065 - INFO - 127.0.0.1 - - [25/May/2025 10:05:42] "POST / HTTP/1.1" 200 -
+2025-05-25 10:06:30,083 - ERROR - Order Error: APIError(code=-1013): Invalid quantity.
+2025-05-25 10:06:30,094 - INFO - 127.0.0.1 - - [25/May/2025 10:06:30] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+2025-05-25 10:06:30,197 - INFO - 127.0.0.1 - - [25/May/2025 10:06:30] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-05-25 10:06:30,198 - INFO - 127.0.0.1 - - [25/May/2025 10:06:30] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-05-25 10:06:30,215 - INFO - 127.0.0.1 - - [25/May/2025 10:06:30] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=mf978S9gXmSxKenx1DQW HTTP/1.1" 200 -
+2025-05-25 10:06:30,248 - INFO - 127.0.0.1 - - [25/May/2025 10:06:30] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-05-25 10:06:35,037 - ERROR - Order Error: APIError(code=-1013): Filter failure: NOTIONAL
+2025-05-25 10:06:35,043 - INFO - 127.0.0.1 - - [25/May/2025 10:06:35] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+2025-05-25 10:06:35,105 - INFO - 127.0.0.1 - - [25/May/2025 10:06:35] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-05-25 10:06:35,107 - INFO - 127.0.0.1 - - [25/May/2025 10:06:35] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-05-25 10:06:35,119 - INFO - 127.0.0.1 - - [25/May/2025 10:06:35] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png&s=mf978S9gXmSxKenx1DQW HTTP/1.1[0m" 304 -
+2025-05-25 10:06:48,252 - INFO - Order Placed: {'symbol': 'BTCUSDT', 'orderId': 6900663, 'orderListId': -1, 'clientOrderId': 'x-HNA2TXFJ6b70d5f23f21b2fa2afb6', 'transactTime': 1748147808524, 'price': '0.00000000', 'origQty': '0.00100000', 'executedQty': '0.00100000', 'origQuoteOrderQty': '0.00000000', 'cummulativeQuoteQty': '108.08490000', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'workingTime': 1748147808524, 'fills': [{'price': '108084.90000000', 'qty': '0.00100000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 3101791}], 'selfTradePreventionMode': 'EXPIRE_MAKER'}
+2025-05-25 10:06:48,253 - INFO - 127.0.0.1 - - [25/May/2025 10:06:48] "POST / HTTP/1.1" 200 -
+2025-05-25 10:07:07,600 - INFO - Order Placed: {'symbol': 'BTCUSDT', 'orderId': 6900769, 'orderListId': -1, 'clientOrderId': 'x-HNA2TXFJ2e7af722f7fb851a237e1f', 'transactTime': 1748147827877, 'price': '0.00000000', 'origQty': '0.00100000', 'executedQty': '0.00100000', 'origQuoteOrderQty': '0.00000000', 'cummulativeQuoteQty': '108.08491000', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'workingTime': 1748147827877, 'fills': [{'price': '108084.91000000', 'qty': '0.00100000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 3101829}], 'selfTradePreventionMode': 'EXPIRE_MAKER'}
+2025-05-25 10:07:07,601 - INFO - 127.0.0.1 - - [25/May/2025 10:07:07] "POST / HTTP/1.1" 200 -
+2025-05-25 10:07:21,527 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-25 10:07:21,527 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-25 10:07:21,546 - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-25 10:07:23,246 - WARNING -  * Debugger is active!
+2025-05-25 10:07:23,248 - INFO -  * Debugger PIN: 613-907-366
+2025-05-25 10:07:26,602 - INFO - Order Placed: {'symbol': 'BTCUSDT', 'orderId': 6900922, 'orderListId': -1, 'clientOrderId': 'x-HNA2TXFJc0dcc94b2a8a89197ad550', 'transactTime': 1748147846874, 'price': '0.00000000', 'origQty': '0.00100000', 'executedQty': '0.00100000', 'origQuoteOrderQty': '0.00000000', 'cummulativeQuoteQty': '108.08490000', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'workingTime': 1748147846874, 'fills': [{'price': '108084.90000000', 'qty': '0.00100000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 3101853}], 'selfTradePreventionMode': 'EXPIRE_MAKER'}
+2025-05-25 10:07:26,613 - INFO - 127.0.0.1 - - [25/May/2025 10:07:26] "POST / HTTP/1.1" 200 -
+2025-05-25 10:07:30,478 - INFO - Order Placed: {'symbol': 'BTCUSDT', 'orderId': 6900951, 'orderListId': -1, 'clientOrderId': 'x-HNA2TXFJbe8bbf7de54514341445e8', 'transactTime': 1748147850756, 'price': '0.00000000', 'origQty': '0.00100000', 'executedQty': '0.00100000', 'origQuoteOrderQty': '0.00000000', 'cummulativeQuoteQty': '108.08490000', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'workingTime': 1748147850756, 'fills': [{'price': '108084.90000000', 'qty': '0.00100000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 3101858}], 'selfTradePreventionMode': 'EXPIRE_MAKER'}
+2025-05-25 10:07:30,479 - INFO - 127.0.0.1 - - [25/May/2025 10:07:30] "POST / HTTP/1.1" 200 -
+2025-05-25 10:07:36,025 - INFO - Order Placed: {'symbol': 'BTCUSDT', 'orderId': 6900990, 'orderListId': -1, 'clientOrderId': 'x-HNA2TXFJ8dfa86821c47b73e95d883', 'transactTime': 1748147856303, 'price': '0.00000000', 'origQty': '0.00200000', 'executedQty': '0.00200000', 'origQuoteOrderQty': '0.00000000', 'cummulativeQuoteQty': '216.16982000', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'workingTime': 1748147856303, 'fills': [{'price': '108084.91000000', 'qty': '0.00200000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 3101866}], 'selfTradePreventionMode': 'EXPIRE_MAKER'}
+2025-05-25 10:07:36,026 - INFO - 127.0.0.1 - - [25/May/2025 10:07:36] "POST / HTTP/1.1" 200 -
