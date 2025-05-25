@@ -124,7 +124,7 @@ git push -u origin main
 
 ## 🌐 Live Demo 
 
-👉 `https://your-demo-link.vercel.app`
+Not deployed due to some technical issue
 
 -----
 
