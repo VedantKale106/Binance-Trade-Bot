@@ -17,7 +17,6 @@ This application is strictly designed for use with the Binance **Spot Testnet** 
   * **Enhanced Security**: Employs `.env` files for secure handling of API keys, ensuring credentials are not exposed in the codebase.
   * **Robust Input Validation**: Implements client-side and server-side validation to ensure accurate order parameters before API submission.
   * **Comprehensive Logging**: Detailed logging of all order placements and potential errors for easy monitoring and debugging.
-  * **Order History View**: Provides a clear, organized display of recently placed orders.
   * **User-Friendly Interface**: Built with Flask and Bootstrap, offering a simple yet effective user experience.
 
 -----
@@ -25,8 +24,8 @@ This application is strictly designed for use with the Binance **Spot Testnet** 
 ## 📸 Visual Overview
 
 ### ⚙️ Order Placement Interface
-
-### 📊 Recent Orders Display
+![Image](https://github.com/user-attachments/assets/84cba38a-4e36-4873-8375-f59aedfe6418)
+![Image](https://github.com/user-attachments/assets/7c00e436-b170-4f0f-8c92-34531b62318d)
 
 -----
 
@@ -51,9 +50,6 @@ project/
 ├── requirements.txt
 ├── templates/
 │   └── index.html
-├── screenshots/
-│   ├── form.png
-│   └── orders.png
 └── README.md
 ```
 
@@ -126,9 +122,7 @@ git push -u origin main
 
 -----
 
-## 🌐 Live Demo (Optional)
-
-If you have deployed the application to a platform like Vercel, you can provide a live demo link here:
+## 🌐 Live Demo 
 
 👉 `https://your-demo-link.vercel.app`
 
